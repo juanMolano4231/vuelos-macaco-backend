@@ -1,0 +1,19 @@
+Aplicación de venta de tiquetes de avión.
+
+Entidades:
+	Usuario
+		Id
+		Nombre
+		Contraseña
+		Correo
+		Edad
+	Tiquete
+		Id
+		IdVuelo
+		Valor
+	Vuelo
+		Id
+		Fecha y hora inicio
+		Fecha y hora final
+		Origen
+		Destino
