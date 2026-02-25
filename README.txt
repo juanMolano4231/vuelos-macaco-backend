@@ -10,6 +10,7 @@ Entidades:
 	Tiquete
 		Id
 		IdVuelo
+		IdUsuario
 		Valor
 	Vuelo
 		Id
