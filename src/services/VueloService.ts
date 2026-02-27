@@ -8,5 +8,12 @@ export class VueloService {
         this.vueloRepository = new VueloRepository();
     }
 
+    async findAll() {
+        return await this.vueloRepository.findAll();
+    }
+
+    async findById(id: number) {
+        return await this.vueloRepository.findById(id);
+    }
 
 }
