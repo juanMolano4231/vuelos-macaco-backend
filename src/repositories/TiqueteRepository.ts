@@ -15,5 +15,8 @@ export class TiqueteRepository {
     async findById(id: number) {
         return await Tiquete.findByPk(id);
     }
-
+    
+    async create(data: { idVuelo: number; idUsuario: number; valor: number }) {
+        return Tiquete.create(data);
+    }
 }

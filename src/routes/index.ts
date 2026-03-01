@@ -3,7 +3,7 @@ import { login } from '../controllers/AuthController';
 import { authMiddleware } from '../middleware/auth';
 import { getMe, register } from '../controllers/UsuarioController';
 import { getMyTickets, getTicketById, getTickets } from '../controllers/TiqueteController';
-import { getVueloById, getVuelos } from '../controllers/VueloController';
+import { comprarTicketParaVuelo, getVueloById, getVuelos } from '../controllers/VueloController';
 
 const router = Router();
 
@@ -18,5 +18,7 @@ router.get('/tickets/:id', authMiddleware, getTicketById);
 
 router.get('/vuelos', authMiddleware, getVuelos);
 router.get('/vuelos/:id', authMiddleware, getVueloById);
+
+router.post('/vuelos/:id', authMiddleware, comprarTicketParaVuelo);
 
 export default router;
