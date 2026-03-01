@@ -18,6 +18,8 @@ export const getVueloById = async (req: Request, res: Response) => {
         const vueloId = parseInt(req.params.id, 10);
         const vuelo = await vueloService.findById(vueloId);
 
+         return res.json(vuelo);
+
         if(!vuelo) {
             return res.status(404).json({ message: 'Vuelo no encontrado'})
         }
