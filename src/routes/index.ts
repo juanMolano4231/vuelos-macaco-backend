@@ -7,8 +7,8 @@ import { getVueloById, getVuelos } from '../controllers/VueloController';
 
 const router = Router();
 
-router.post('/login', login);
-router.post('/register', register);
+router.post('/auth/login', login);
+router.post('/auth/register', register);
 
 router.get('/me', authMiddleware, getMe);
 router.get('/me/tickets', authMiddleware, getMyTickets);
