@@ -19,4 +19,8 @@ export class TiqueteService {
         return await this.tiqueteRepository.findById(id);
     }
 
+    async create(data: { idVuelo: number; idUsuario: number; valor: number }) {
+        return this.tiqueteRepository.create(data);
+    }
+
 }
