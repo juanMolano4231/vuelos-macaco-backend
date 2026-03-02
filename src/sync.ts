@@ -3,15 +3,24 @@ import './models/Usuario';
 import './models/Vuelo';
 import './models/Tiquete';
 
-async function syncDatabase() {
+export async function syncDatabase(options: { alter?: boolean } = { alter: true }) {
   try {
-    await sequelize.sync({ alter: true });
+    await sequelize.sync({ alter: options.alter });
     console.log('Database synced successfully');
   } catch (error) {
     console.error('Error syncing database:', error);
-  } finally {
-    await sequelize.close();
+    throw error;
   }
 }
 
-syncDatabase();
+if (require.main === module) {
+  (async () => {
+    try {
+      await syncDatabase();
+    } catch (err) {
+      process.exit(1);
+    } finally {
+      await sequelize.close();
+    }
+  })();
+}
